@@ -9,6 +9,7 @@ export interface Session {
 }
 
 export function checkExpiry(session: Session | null): boolean | null {
+  // guard: handle null session
   if (!session) return null;
   return new Date() < session.expiresAt;
 }

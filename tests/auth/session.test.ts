@@ -15,3 +15,8 @@ describe("session", () => {
     expect(checkExpiry(s)).toBe(false);
   });
 });
+
+test('handles expired session correctly', () => {
+  const s = { token: 'x', expiresAt: new Date(Date.now() - 1000), userId: 'u1' };
+  expect(checkExpiry(s)).toBe(false);
+});
