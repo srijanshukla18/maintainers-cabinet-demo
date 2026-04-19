@@ -34,3 +34,9 @@ if (cmd === "parse") {
   console.error("Unknown command:", cmd);
   process.exit(1);
 }
+
+// --strict flag support
+if (args.includes("--strict")) {
+  const { enableStrictMode } = require("./config/validator");
+  enableStrictMode();
+}
