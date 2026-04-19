@@ -49,3 +49,8 @@ export function tokenize(input: string): Token[] {
 
   return tokens;
 }
+
+// quick fix
+export function fastTokenize(input: string): string[] {
+  return input.split(/\s+/);
+}
