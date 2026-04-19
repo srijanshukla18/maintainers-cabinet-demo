@@ -1,0 +1,45 @@
+version: 1
+
+cabinet:
+  mode: l3_assist
+  default_branch: main
+
+autonomy:
+  add_labels: true
+  post_comments: true
+  close_issues: false
+  request_pr_changes: false
+  approve_prs: false
+  open_pull_requests: false
+  create_draft_releases: false
+
+triage:
+  duplicate_threshold: 0.82
+  required_bug_fields:
+    - version
+    - environment
+    - reproduction_steps
+    - expected_behavior
+    - actual_behavior
+
+review:
+  require_tests_for:
+    - src/**
+  docs_paths:
+    - docs/**
+    - README.md
+  risky_paths:
+    - src/parser/**
+    - src/auth/**
+    - src/config/**
+
+release:
+  changelog_path: CHANGELOG.md
+  versioning: semver
+
+community:
+  tone: gentle_firm
+  forbidden_phrases:
+    - just
+    - obviously
+    - works for me
